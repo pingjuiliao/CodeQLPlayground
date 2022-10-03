@@ -1,0 +1,64 @@
+[2022-10-02 20:35:08] This is codeql execute queries -J-Xmx2470M --off-heap-ram=2470 --verbosity=progress --logdir=/home/pingjui/CodeQLPlayground/mydb/log --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --qlconfig-file=/home/pingjui/CodeQLPlayground/qlconfig.yml --no-rerun --output=/home/pingjui/CodeQLPlayground/mydb/results -- /home/pingjui/CodeQLPlayground/mydb/db-cpp mydb/example.ql
+[2022-10-02 20:35:08] Calling plumbing command: codeql resolve queries --format=json -- mydb/example.ql
+[2022-10-02 20:35:08] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/pingjui/CodeQLPlayground.
+[2022-10-02 20:35:08] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/pingjui/CodeQLPlayground/mydb/example.ql"
+                      ]
+[2022-10-02 20:35:08] Refusing fancy output: The terminal is not an xterm: screen-256color
+[2022-10-02 20:35:08] Creating executor with 1 threads.
+[2022-10-02 20:35:08] Calling plumbing command: codeql resolve extensions --insecurely-execute-ml-model-checksums= mydb/example.ql
+[2022-10-02 20:35:08] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/pingjui/CodeQLPlayground/qlconfig.yml --format startingpacks -- mydb/example.ql
+[2022-10-02 20:35:08] [PROGRESS] resolve queries> Recording pack reference codeql/cpp-queries at /home/pingjui/CodeQLPlayground.
+[2022-10-02 20:35:08] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/pingjui/CodeQLPlayground"
+                      ]
+[2022-10-02 20:35:46] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { }
+                      }
+[2022-10-02 20:35:46] [PROGRESS] execute queries> Did not find any ML models.
+[2022-10-02 20:35:46] [SPAMMIER] execute queries> Data extensions for query example.ql in mydb/example.ql:
+                      {}
+[2022-10-02 20:35:46] Calling plumbing command: codeql resolve library-path --qlconfig-file=/home/pingjui/CodeQLPlayground/qlconfig.yml --query=/home/pingjui/CodeQLPlayground/mydb/example.ql --format=json
+[2022-10-02 20:35:46] [DETAILS] resolve library-path> Resolving query at normalized path /home/pingjui/CodeQLPlayground/mydb/example.ql.
+[2022-10-02 20:35:46] [DETAILS] resolve library-path> Found enclosing pack 'codeql/cpp-queries' at /home/pingjui/CodeQLPlayground.
+[2022-10-02 20:35:46] [DETAILS] resolve library-path> Adding compilation cache at /home/pingjui/CodeQLPlayground/.cache.
+[2022-10-02 20:35:46] [DETAILS] resolve library-path> Resolving library dependencies from /home/pingjui/CodeQLPlayground/qlpack.yml.
+[2022-10-02 20:35:46] [ERROR] resolve library-path> ERROR: Referenced pack 'codeql/cpp-all' not found. (/home/pingjui/CodeQLPlayground/qlpack.yml:1,1-1)
+[2022-10-02 20:35:46] [ERROR] resolve library-path> ERROR: Referenced pack 'codeql/suite-helpers' not found. (/home/pingjui/CodeQLPlayground/qlpack.yml:1,1-1)
+[2022-10-02 20:35:46] [ERROR] Exception collected asynchronously; saving it while cancelling everything
+                              com.semmle.util.exception.UserError: Could not resolve library path for /home/pingjui/CodeQLPlayground
+                              	at com.semmle.cli2.resolve.ResolveLibraryPathCommand.executeJSON(ResolveLibraryPathCommand.java:219)
+                              	at com.semmle.cli2.resolve.ResolveLibraryPathCommand.executeJSON(ResolveLibraryPathCommand.java:46)
+                              	at com.semmle.cli2.picocli.SimpleJsonSubcommand.executeInsistingOnJSON(SimpleJsonSubcommand.java:117)
+                              	at com.semmle.cli2.picocli.PlumbingRunner.call(PlumbingRunner.java:54)
+                              	at com.semmle.cli2.picocli.SubcommandCommon.callPlumbingInProcess(SubcommandCommon.java:133)
+                              	at com.semmle.cli2.execute.ExecuteQueriesCommand.resolveLibraryPath(ExecuteQueriesCommand.java:555)
+                              	at com.semmle.cli2.execute.ExecuteQueriesCommand.lambda$executeSubcommand$2(ExecuteQueriesCommand.java:286)
+                              	at com.semmle.cli2.ql.Paralleliser$1.lambda$next$0(Paralleliser.java:68)
+                              	at com.semmle.util.concurrent.FutureUtils.supplyCompose(FutureUtils.java:217)
+                              	at com.semmle.cli2.ql.Paralleliser.lambda$startMoreJobs$1(Paralleliser.java:112)
+                              	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+                              	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+                              	at java.base/java.lang.Thread.run(Unknown Source)
+[2022-10-02 20:35:46] Sequence stamp origin is -6403761411114061028
+[2022-10-02 20:35:46] Pausing evaluation to close the cache at sequence stamp o+0
+[2022-10-02 20:35:46] The disk cache is freshly trimmed; leave it be.
+[2022-10-02 20:35:46] Unpausing evaluation
+[2022-10-02 20:35:46] Exception caught in async task: Could not resolve library path for /home/pingjui/CodeQLPlayground
+                      com.semmle.cli2.resolve.ResolveLibraryPathCommand.executeJSON(ResolveLibraryPathCommand.java:219)
+                      com.semmle.cli2.resolve.ResolveLibraryPathCommand.executeJSON(ResolveLibraryPathCommand.java:46)
+                      com.semmle.cli2.picocli.SimpleJsonSubcommand.executeInsistingOnJSON(SimpleJsonSubcommand.java:117)
+                      com.semmle.cli2.picocli.PlumbingRunner.call(PlumbingRunner.java:54)
+                      com.semmle.cli2.picocli.SubcommandCommon.callPlumbingInProcess(SubcommandCommon.java:133)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.resolveLibraryPath(ExecuteQueriesCommand.java:555)
+                      com.semmle.cli2.execute.ExecuteQueriesCommand.lambda$executeSubcommand$2(ExecuteQueriesCommand.java:286)
+                      com.semmle.cli2.ql.Paralleliser$1.lambda$next$0(Paralleliser.java:68)
+                      com.semmle.util.concurrent.FutureUtils.supplyCompose(FutureUtils.java:217)
+                      com.semmle.cli2.ql.Paralleliser.lambda$startMoreJobs$1(Paralleliser.java:112)
+                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+                      java.base/java.lang.Thread.run(Unknown Source)

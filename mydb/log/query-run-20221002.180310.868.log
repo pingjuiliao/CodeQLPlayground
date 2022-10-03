@@ -1,0 +1,12 @@
+[2022-10-02 18:03:10] This is codeql query run ./example.ql -d=.
+[2022-10-02 18:03:10] Log file was started late.
+[2022-10-02 18:03:10] Calling plumbing command: codeql resolve ram --format=json
+[2022-10-02 18:03:10] Plumbing command codeql resolve ram completed:
+                      [
+                        "-J-Xmx2470M",
+                        "--off-heap-ram=2470"
+                      ]
+[2022-10-02 18:03:10] Spawning plumbing command: execute queries -J-Xmx2470M --off-heap-ram=2470 --verbosity=progress --logdir=/home/pingjui/CodeQLPlayground/mydb/log --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --qlconfig-file=/home/pingjui/CodeQLPlayground/mydb/qlconfig.yml -- /home/pingjui/CodeQLPlayground/mydb/db-cpp /home/pingjui/CodeQLPlayground/mydb/example.ql
+[2022-10-02 18:03:12] [ERROR] Spawned process exited abnormally (code 2; tried to run: [/home/pingjui/codeql/tools/linux64/java/bin/java, -Xmx2470M, -Djava.library.path=/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib, -cp, /home/pingjui/codeql/tools/codeql.jar, com.semmle.cli2.CodeQL, env_argv, execute, queries, -J-Xmx2470M, _, _, _, _, _, _, _, --, /home/pingjui/CodeQLPlayground/mydb/db-cpp, /home/pingjui/CodeQLPlayground/mydb/example.ql])
+[2022-10-02 18:03:12] Plumbing command codeql execute queries terminated with status 2.
+[2022-10-02 18:03:12] Exiting with code 2

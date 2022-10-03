@@ -1,0 +1,72 @@
+[2022-10-02 18:01:27] This is codeql execute queries -J-Xmx2470M --off-heap-ram=2470 --verbosity=progress --logdir=/home/pingjui/CodeQLPlayground/mydb/log --evaluator-log-level=5 --insecurely-execute-ml-model-checksums= --warnings=show --qlconfig-file=/home/pingjui/CodeQLPlayground/mydb/qlconfig.yml -- /home/pingjui/CodeQLPlayground/mydb/db-cpp /home/pingjui/CodeQLPlayground/mydb/example.ql
+[2022-10-02 18:01:27] Calling plumbing command: codeql resolve queries --format=json -- /home/pingjui/CodeQLPlayground/mydb/example.ql
+[2022-10-02 18:01:27] Plumbing command codeql resolve queries completed:
+                      [
+                        "/home/pingjui/CodeQLPlayground/mydb/example.ql"
+                      ]
+[2022-10-02 18:01:27] Refusing fancy output: The terminal is not an xterm: screen-256color
+[2022-10-02 18:01:27] Creating executor with 1 threads.
+[2022-10-02 18:01:27] Calling plumbing command: codeql resolve extensions --insecurely-execute-ml-model-checksums= /home/pingjui/CodeQLPlayground/mydb/example.ql
+[2022-10-02 18:01:27] Calling plumbing command: codeql resolve queries --qlconfig-file=/home/pingjui/CodeQLPlayground/mydb/qlconfig.yml --format startingpacks -- /home/pingjui/CodeQLPlayground/mydb/example.ql
+[2022-10-02 18:01:27] Plumbing command codeql resolve queries completed:
+                      [ ]
+[2022-10-02 18:01:27] Plumbing command codeql resolve extensions completed:
+                      {
+                        "models" : [ ],
+                        "data" : { }
+                      }
+[2022-10-02 18:01:27] [PROGRESS] execute queries> Did not find any ML models.
+[2022-10-02 18:01:27] [SPAMMIER] execute queries> Data extensions for query example.ql in /home/pingjui/CodeQLPlayground/mydb/example.ql:
+                      {}
+[2022-10-02 18:01:27] Calling plumbing command: codeql resolve library-path --qlconfig-file=/home/pingjui/CodeQLPlayground/mydb/qlconfig.yml --query=/home/pingjui/CodeQLPlayground/mydb/example.ql --format=json
+[2022-10-02 18:01:27] [DETAILS] resolve library-path> Resolving query at normalized path /home/pingjui/CodeQLPlayground/mydb/example.ql.
+[2022-10-02 18:01:27] [DETAILS] resolve library-path> Found no pack; trying after symlink resolution with /home/pingjui/CodeQLPlayground/mydb/example.ql.
+[2022-10-02 18:01:27] [DETAILS] resolve library-path> Found enclosing pack 'mydb' at /home/pingjui/CodeQLPlayground/mydb.
+[2022-10-02 18:01:27] [DETAILS] resolve library-path> Adding compilation cache at /home/pingjui/CodeQLPlayground/mydb/.cache.
+[2022-10-02 18:01:27] [DETAILS] resolve library-path> Resolving library dependencies from /home/pingjui/CodeQLPlayground/mydb/example.ql.
+[2022-10-02 18:01:27] [DETAILS] resolve library-path> QL pack dependencies for /home/pingjui/CodeQLPlayground/mydb resolved OK.
+[2022-10-02 18:01:27] [DETAILS] resolve library-path> Found no dbscheme through dependencies.
+[2022-10-02 18:01:27] Plumbing command codeql resolve library-path completed:
+                      {
+                        "libraryPath" : [
+                          "/home/pingjui/CodeQLPlayground/mydb"
+                        ],
+                        "compilationCache" : [
+                          "/home/pingjui/CodeQLPlayground/mydb/.cache"
+                        ],
+                        "relativeName" : "mydb/example.ql",
+                        "possibleAdvice" : "There should probably be a qlpack.yml file declaring dependencies in /home/pingjui/CodeQLPlayground/mydb or an enclosing directory.",
+                        "qlPackName" : "mydb"
+                      }
+[2022-10-02 18:01:27] [PROGRESS] execute queries> Compiling query plan for /home/pingjui/CodeQLPlayground/mydb/example.ql.
+[2022-10-02 18:01:27] [DETAILS] execute queries> Resolving imports for /home/pingjui/CodeQLPlayground/mydb/example.ql.
+[2022-10-02 18:01:27] Resolved file set for /home/pingjui/CodeQLPlayground/mydb/example.ql hashes to 13f4a9858caa630e55cb924c7bf7d033fc7c3ca9.
+[2022-10-02 18:01:27] [DETAILS] execute queries> Checking QL for /home/pingjui/CodeQLPlayground/mydb/example.ql.
+[2022-10-02 18:01:28] ExternalModuleBindingPass ...
+[2022-10-02 18:01:28] ExternalModuleBindingPass time: 00:00.002
+[2022-10-02 18:01:28] QLPredicateSynthesiser ...
+[2022-10-02 18:01:28] QLPredicateSynthesiser time: 00:00.000
+[2022-10-02 18:01:28] DeclarationBindingPass ...
+[2022-10-02 18:01:28] DeclarationBindingPass time: 00:00.009
+[2022-10-02 18:01:28] Fixed point time ...
+[2022-10-02 18:01:28] Fixed point time time: 00:00.009
+[2022-10-02 18:01:28] ReferenceBindingPass ...
+[2022-10-02 18:01:28] ReferenceBindingPass time: 00:00.000
+[2022-10-02 18:01:28] ReferenceBindingCheck ...
+[2022-10-02 18:01:28] ReferenceBindingCheck time: 00:00.002
+[2022-10-02 18:01:28] PredicateBodyBindingPass ...
+[2022-10-02 18:01:28] PredicateBodyBindingPass time: 00:00.002
+[2022-10-02 18:01:28] LanguagePragmaPropagationPass ...
+[2022-10-02 18:01:28] LanguagePragmaPropagationPass time: 00:00.000
+[2022-10-02 18:01:28] Ambiguity checks ...
+[2022-10-02 18:01:28] Ambiguity checks time: 00:00.004
+[2022-10-02 18:01:28] Ql checks ...
+[2022-10-02 18:01:28] Ql checks time: 00:00.027
+[2022-10-02 18:01:28] [ERROR] execute queries> ERROR: Could not resolve module cpp. There should probably be a qlpack.yml file declaring dependencies in /home/pingjui/CodeQLPlayground/mydb or an enclosing directory. (/home/pingjui/CodeQLPlayground/mydb/example.ql:1,8-11)
+[2022-10-02 18:01:28] [ERROR] execute queries> ERROR: Could not resolve type FunctionCall (/home/pingjui/CodeQLPlayground/mydb/example.ql:3,6-18)
+[2022-10-02 18:01:28] [ERROR] execute queries> ERROR: Could not resolve type Expr (/home/pingjui/CodeQLPlayground/mydb/example.ql:3,25-29)
+[2022-10-02 18:01:28] Sequence stamp origin is -6403801015298500140
+[2022-10-02 18:01:28] Pausing evaluation to close the cache at sequence stamp o+0
+[2022-10-02 18:01:28] The disk cache is freshly trimmed; leave it be.
+[2022-10-02 18:01:28] Unpausing evaluation
+[2022-10-02 18:01:28] Exiting with code 2

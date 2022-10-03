@@ -1,0 +1,9 @@
+---
+sourceLocationPrefix: "/home/pingjui/CodeQLPlayground/bufovfl"
+baselineLinesOfCode: 42
+unicodeNewlines: false
+columnKind: "utf8"
+primaryLanguage: "cpp"
+creationMetadata:
+  cliVersion: "2.11.0"
+  creationTime: "2022-10-03T00:27:57.630622860Z"
