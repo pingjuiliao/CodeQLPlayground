@@ -15,6 +15,6 @@ if [ ! -d "${DB}" ]; then
 fi
 
 # Analyze database
-FORMAT=graphtext
+FORMAT=sarif-latest
 QUERY=query.ql
-codeql database analyze ${DB} --format=csv --output=output ${QUERY}
+codeql database analyze ${DB} --format=${FORMAT} --output=output ${QUERY}

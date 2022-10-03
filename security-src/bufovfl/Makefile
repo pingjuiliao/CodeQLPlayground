@@ -1,4 +1,4 @@
-all: fgets read strcpy memcpy
+all: fgets read strcpy memcpy strncpy
 
 %: %.c
 	$(CC) -o $@.exe $<
