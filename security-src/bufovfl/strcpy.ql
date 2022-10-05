@@ -3,12 +3,43 @@
   * @description check memcpy, strcpy, strncpy
   * @kind problem
   * @problem.severity error
-  * @id cpp/detect-unused-blocks
+  * @id cpp/strcpy_local
   * @tags maintainability
   */
 
 import cpp
+import semmle.code.cpp.dataflow.DataFlow
 
-from FunctionCall call
-where call.getTarget().hasName("strncpy")
-select call, "This is the copy command."
+class MallocCall extends FunctionCall {
+  MallocCall() {
+    this.getTarget().hasQualifiedName("malloc")
+  }
+  predicate isFixedSize() {
+    this.getArgument(0) instanceof Literal
+  }
+}
+
+class StrcpyCall extends FunctionCall {
+  StrcpyCall() {
+    this.getTarget().hasQualifiedName("strcpy")
+  }
+  predicate fixedDstSize() { 
+    exists(DataFlow::Node source, DataFlow::Node sink |
+      DataFlow::localFlow(source, sink) and
+      sink.asExpr() = this.getArgument(0) and
+       (source.asExpr().(MallocCall).isFixedSize() or  
+        (source.asExpr().getType().(ArrayType).hasArraySize() and 
+         not source.asExpr() instanceof FunctionCall
+        )))
+  }
+  predicate fixedSrcSize() {
+    exists(DataFlow::Node source, DataFlow::Node sink |
+      DataFlow::localFlow(source, sink) and 
+      sink.asExpr() = this.getArgument(1) and 
+      source.asExpr().isConstant() )
+  }
+}
+
+from StrcpyCall scpy
+where scpy.fixedDstSize() and scpy.fixedSrcSize()
+select scpy, "both buffers have fixed size!!"
