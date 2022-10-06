@@ -41,5 +41,5 @@ class StrcpyCall extends FunctionCall {
 }
 
 from StrcpyCall scpy
-where scpy.fixedDstSize() and scpy.fixedSrcSize()
-select scpy, "both buffers have fixed size!!"
+where scpy.fixedDstSize()
+select scpy, "destination buffer has fixed size!!"

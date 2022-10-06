@@ -432,7 +432,35 @@
         "index" : 0
       },
       "message" : {
-        "text" : "both buffers have fixed size!!"
+        "text" : "src buffers have fixed size!!"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "strcpy.c",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 15,
+            "startColumn" : 3,
+            "endColumn" : 9
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "8f53281d737c6c63:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "cpp/strcpy_local",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "cpp/strcpy_local",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "src buffers have fixed size!!"
       },
       "locations" : [ {
         "physicalLocation" : {
@@ -460,7 +488,91 @@
         "index" : 0
       },
       "message" : {
-        "text" : "both buffers have fixed size!!"
+        "text" : "src buffers have fixed size!!"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "strcpy.c",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 3,
+            "endColumn" : 9
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "fd149f9d24c9b798:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "cpp/strcpy_local",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "cpp/strcpy_local",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "src buffers have fixed size!!"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "strcpy.c",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 3,
+            "endColumn" : 9
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "608d5266b6d3f4c4:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "cpp/strcpy_local",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "cpp/strcpy_local",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "src buffers have fixed size!!"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "strcpy.c",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 35,
+            "startColumn" : 3,
+            "endColumn" : 9
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "4b0810517fdd10b2:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "cpp/strcpy_local",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "cpp/strcpy_local",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "src buffers have fixed size!!"
       },
       "locations" : [ {
         "physicalLocation" : {
@@ -478,6 +590,62 @@
       } ],
       "partialFingerprints" : {
         "primaryLocationLineHash" : "44abe6678ec277ee:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "cpp/strcpy_local",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "cpp/strcpy_local",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "src buffers have fixed size!!"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "strcpy.c",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 41,
+            "startColumn" : 3,
+            "endColumn" : 9
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "e7ac873769f308f9:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "cpp/strcpy_local",
+      "ruleIndex" : 0,
+      "rule" : {
+        "id" : "cpp/strcpy_local",
+        "index" : 0
+      },
+      "message" : {
+        "text" : "src buffers have fixed size!!"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "strcpy.c",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 47,
+            "startColumn" : 3,
+            "endColumn" : 9
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "ab95f5e55c979d96:1",
         "primaryLocationStartColumnFingerprint" : "0"
       }
     } ],
