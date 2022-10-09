@@ -1,5 +1,5 @@
 /**
-  * @name Dummpy
+  * @name strcpy
   * @description check memcpy, strcpy, strncpy
   * @kind problem
   * @problem.severity error

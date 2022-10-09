@@ -4,6 +4,8 @@
 
 const char* global_constant = "Hello, world! This contains more than 20 bytes\n";
 
+char global_variable[20];
+
 int main(int argc, char** argv) {
   const char* local_constant = "hello, world, this should be long enough.";
   size_t var_size = atoi(argv[1]);
@@ -11,40 +13,54 @@ int main(int argc, char** argv) {
   char* heap_buf = malloc(20);
   char* user_heap_buf = malloc(var_size);
 
-  // Fixed-size but BAD
+  // BAD
   strcpy(stack_buf, global_constant);
   
-  // Fixed-size but BAD
+  // BAD
   strcpy(heap_buf, local_constant);
   
-  // Variable-size: could be BAD
+  // UNKNOWN
   strcpy(user_heap_buf, local_constant);
 
-  // Variable-size: could be BAD
+  // UNKNOWN
   char user_stack_buf[atoi(argv[1])];
   strcpy(user_stack_buf, local_constant);
   
-  // Fixed-size and GOOD 
+  // UNKNOWN: they are not guaranteed to be terminated on size.
   strcpy(stack_buf, heap_buf);
+  
+  // UNKNOWN: ditto
   strcpy(heap_buf, stack_buf);
 
-  // Variable-size: 2nd use of user_heap_buf seems ok...
+  // UNKNOWN
   strcpy(user_heap_buf, stack_buf);
   
-  // Variable-size: 3rd use of user_heap_buf is really weird....
+  // UNKNOWN: 3rd use of user_heap_buf is really weird....
   strcpy(user_heap_buf, stack_buf);
   
-  // Fixed-size: GOOD
+  // GOOD
   strcpy(heap_buf, "hello");
 
-  // Fixed-size: BAD
+  // GOOD
   strcpy(heap_buf, global_constant);
 
-  // Variable-size: could be BAD
+  // UNKNOWN
   strcpy(user_stack_buf, user_heap_buf);
   
-  // Variable-size:
+  // UNKNOWN
   strcpy(user_heap_buf, heap_buf);
+  
+  // UNKNOWN
+  strcpy(user_heap_buf, global_variable);
+
+  // UNKNOWN
+  strcpy(user_stack_buf, global_variable);
+
+  // UNKNOWN
+  strcpy(stack_buf, global_variable);
+
+  // GOOD
+  strcpy(global_variable, "hello");
 
   return 0;
 }
